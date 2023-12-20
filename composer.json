@@ -1,0 +1,54 @@
+{
+    "name": "meilleursbiens/immobridge",
+    "description": "Bridge all real estates softwares",
+    "keywords": [
+        "meilleursbiens",
+        "immobridge"
+    ],
+    "homepage": "https://github.com/meilleursbiens/immobridge",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Clément de Louvencourt",
+            "email": "clement@meilleursbiens.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MeilleursBiens\\Immobridge\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MeilleursBiens\\Immobridge\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MeilleursBiens\\Immobridge\\ImmobridgeServiceProvider"
+            ],
+            "aliases": {
+                "Immobridge": "MeilleursBiens\\Immobridge\\ImmobridgeFacade"
+            }
+        }
+    }
+}
